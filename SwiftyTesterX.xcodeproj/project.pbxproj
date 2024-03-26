@@ -10,12 +10,13 @@
 		74183F8F2BB2E7C200CC62DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183F8E2BB2E7C200CC62DB /* AppDelegate.swift */; };
 		74183F912BB2E7C200CC62DB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183F902BB2E7C200CC62DB /* MainViewController.swift */; };
 		74183F932BB2E7C300CC62DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74183F922BB2E7C300CC62DB /* Assets.xcassets */; };
-		74183F962BB2E7C300CC62DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74183F942BB2E7C300CC62DB /* Main.storyboard */; };
 		74183FA32BB2E96D00CC62DB /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FA22BB2E96D00CC62DB /* MainMenuPresenter.swift */; };
-		74183FA62BB2E9D600CC62DB /* SimulatorsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74183FA52BB2E9D600CC62DB /* SimulatorsList.storyboard */; };
 		74183FA92BB2E9F000CC62DB /* SimulatorsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FA82BB2E9F000CC62DB /* SimulatorsListPresenter.swift */; };
 		74183FAD2BB2EB7B00CC62DB /* SimulatorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FAC2BB2EB7B00CC62DB /* SimulatorsListViewController.swift */; };
 		74183FB02BB2F1B700CC62DB /* MainMenuFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FAF2BB2F1B700CC62DB /* MainMenuFlowCoordinator.swift */; };
+		74183FB22BB2F46E00CC62DB /* MainMenuModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FB12BB2F46E00CC62DB /* MainMenuModuleBuilder.swift */; };
+		74183FB62BB2FD9400CC62DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FB52BB2FD9400CC62DB /* main.swift */; };
+		74183FB82BB3057700CC62DB /* SimulatorsListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FB72BB3057700CC62DB /* SimulatorsListModuleBuilder.swift */; };
 		F5490896E553747FA200A63C /* Pods_SwiftyTesterX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAADB4258810D7FF84326F64 /* Pods_SwiftyTesterX.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +26,14 @@
 		74183F8E2BB2E7C200CC62DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74183F902BB2E7C200CC62DB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		74183F922BB2E7C300CC62DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		74183F952BB2E7C300CC62DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74183F972BB2E7C300CC62DB /* SwiftyTesterX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyTesterX.entitlements; sourceTree = "<group>"; };
 		74183FA22BB2E96D00CC62DB /* MainMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
-		74183FA52BB2E9D600CC62DB /* SimulatorsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimulatorsList.storyboard; sourceTree = "<group>"; };
 		74183FA82BB2E9F000CC62DB /* SimulatorsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorsListPresenter.swift; sourceTree = "<group>"; };
 		74183FAC2BB2EB7B00CC62DB /* SimulatorsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorsListViewController.swift; sourceTree = "<group>"; };
 		74183FAF2BB2F1B700CC62DB /* MainMenuFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuFlowCoordinator.swift; sourceTree = "<group>"; };
+		74183FB12BB2F46E00CC62DB /* MainMenuModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuModuleBuilder.swift; sourceTree = "<group>"; };
+		74183FB52BB2FD9400CC62DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		74183FB72BB3057700CC62DB /* SimulatorsListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorsListModuleBuilder.swift; sourceTree = "<group>"; };
 		9E21DEDE637AA61AC4C42668 /* Pods-SwiftyTesterX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyTesterX.release.xcconfig"; path = "Target Support Files/Pods-SwiftyTesterX/Pods-SwiftyTesterX.release.xcconfig"; sourceTree = "<group>"; };
 		EAADB4258810D7FF84326F64 /* Pods_SwiftyTesterX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyTesterX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				74183F8E2BB2E7C200CC62DB /* AppDelegate.swift */,
 				74183F922BB2E7C300CC62DB /* Assets.xcassets */,
 				74183F972BB2E7C300CC62DB /* SwiftyTesterX.entitlements */,
+				74183FB52BB2FD9400CC62DB /* main.swift */,
 			);
 			path = SwiftyTesterX;
 			sourceTree = "<group>";
@@ -101,6 +104,7 @@
 			children = (
 				74183FA12BB2E8E100CC62DB /* Presenter */,
 				74183FA02BB2E8D800CC62DB /* View */,
+				74183FB12BB2F46E00CC62DB /* MainMenuModuleBuilder.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -110,6 +114,7 @@
 			children = (
 				74183FA72BB2E9DE00CC62DB /* Presenter */,
 				74183FA42BB2E9BA00CC62DB /* View */,
+				74183FB72BB3057700CC62DB /* SimulatorsListModuleBuilder.swift */,
 			);
 			path = SimulatorsList;
 			sourceTree = "<group>";
@@ -118,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				74183F902BB2E7C200CC62DB /* MainViewController.swift */,
-				74183F942BB2E7C300CC62DB /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,7 +138,6 @@
 		74183FA42BB2E9BA00CC62DB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				74183FA52BB2E9D600CC62DB /* SimulatorsList.storyboard */,
 				74183FAC2BB2EB7B00CC62DB /* SimulatorsListViewController.swift */,
 			);
 			path = View;
@@ -225,8 +228,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				74183F932BB2E7C300CC62DB /* Assets.xcassets in Resources */,
-				74183F962BB2E7C300CC62DB /* Main.storyboard in Resources */,
-				74183FA62BB2E9D600CC62DB /* SimulatorsList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74183FB22BB2F46E00CC62DB /* MainMenuModuleBuilder.swift in Sources */,
+				74183FB82BB3057700CC62DB /* SimulatorsListModuleBuilder.swift in Sources */,
 				74183FAD2BB2EB7B00CC62DB /* SimulatorsListViewController.swift in Sources */,
+				74183FB62BB2FD9400CC62DB /* main.swift in Sources */,
 				74183F912BB2E7C200CC62DB /* MainViewController.swift in Sources */,
 				74183F8F2BB2E7C200CC62DB /* AppDelegate.swift in Sources */,
 				74183FA32BB2E96D00CC62DB /* MainMenuPresenter.swift in Sources */,
@@ -289,17 +293,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		74183F942BB2E7C300CC62DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				74183F952BB2E7C300CC62DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		74183F982BB2E7C300CC62DB /* Debug */ = {
@@ -434,7 +427,6 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,7 +454,6 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
