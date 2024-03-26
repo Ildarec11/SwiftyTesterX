@@ -7,14 +7,23 @@
 
 import Foundation
 
-protocol MainMenuPresenterInput {
+protocol MainMenuModuleInput: AnyObject {
     
 }
 
-protocol MainMenuPresenterOutput {
-    
+protocol MainMenuModuleOutput: AnyObject {
+    func moduleWantsToGoNext(_ input: MainMenuModuleInput)
 }
 
-final class MainMenuPresenter: MainMenuPresenterInput {
+final class MainMenuPresenter: MainMenuModuleInput {
+    
+    weak var moduleOutput: MainMenuModuleOutput?
+}
 
+extension MainMenuPresenter: MainViewControllerOutput {
+
+    func recordButtonDidPressed() {
+        print("-- pressed")
+        moduleOutput?.moduleWantsToGoNext(self)
+    }
 }

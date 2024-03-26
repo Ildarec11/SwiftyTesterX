@@ -6,8 +6,10 @@
 //
 
 import Cocoa
+import SnapKit
 
 protocol MainViewControllerOutput: AnyObject {
+
     func recordButtonDidPressed()
 }
 
@@ -17,20 +19,38 @@ final class MainViewController: NSViewController {
     
     weak var output: MainViewControllerOutput?
 
-    @IBAction func recordButtonDidPressed(_ sender: Any) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupRecordButton()
+        setupLabel()
+    }
+    
+    private func setupLabel() {
+        let label = NSTextField(labelWithString: "SwiftTesterX")
+        label.font = NSFont.systemFont(ofSize: 36)
+        view.addSubview(label)
 
-        // Do any additional setup after loading the view.
+        label.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
+    
+    private func setupRecordButton() {
+        let button = NSButton(title: "Record", target: self, action: #selector(recordButtonDidPressed))
+        button.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(button)
+
+        button.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-50)
+        }
     }
 }
 
 extension MainViewController: MainViewControllerOutput {
-
-    func recordButtonDidPressed() {
-        //
+    
+    @objc func recordButtonDidPressed() {
+        output?.recordButtonDidPressed()
     }
 }
