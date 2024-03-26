@@ -1,0 +1,6 @@
+framework module Pods_SwiftyTesterX {
+  umbrella header "Pods-SwiftyTesterX-umbrella.h"
+
+  export *
+  module * { export * }
+}
