@@ -7,14 +7,34 @@
 
 import Foundation
 
-protocol SimulatorsListPresenterInput: AnyObject {
-    
-}
+protocol SimulatorsListPresenterInput: AnyObject {}
 
-protocol SimulatorsListPresenterOutput: AnyObject {
-    
-}
+protocol SimulatorsListPresenterOutput: AnyObject {}
 
 final class SimulatorsListPresenter: SimulatorsListPresenterInput {
     
+    private let consoleCommandActivator = ConsoleCommandActivator()
+    private let devicesParser = DeviceInfoParser()
+    
+    weak var moduleOutput: SimulatorsListModuleOutput?
+    weak var view: SimulatorsListViewInput?
+    
+    private func loadDevicesList() {
+        guard let infoString = consoleCommandActivator.listSimulatorDevices() else {
+            print("-- Something went wrong")
+            return
+        }
+
+        let deviceList = devicesParser.parseDevicesInfo(infoString)
+        view?.showAvailableDevices(devices: deviceList)
+    }
+}
+
+// MARK: SimulatorsListViewOutput
+
+extension SimulatorsListPresenter: SimulatorsListViewOutput {
+    
+    func viewDidLoad() {
+        loadDevicesList()
+    }
 }

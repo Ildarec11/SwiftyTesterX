@@ -17,6 +17,11 @@
 		74183FB22BB2F46E00CC62DB /* MainMenuModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FB12BB2F46E00CC62DB /* MainMenuModuleBuilder.swift */; };
 		74183FB62BB2FD9400CC62DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FB52BB2FD9400CC62DB /* main.swift */; };
 		74183FB82BB3057700CC62DB /* SimulatorsListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FB72BB3057700CC62DB /* SimulatorsListModuleBuilder.swift */; };
+		74183FBB2BB30FC700CC62DB /* ConsoleCommandActivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FBA2BB30FC700CC62DB /* ConsoleCommandActivator.swift */; };
+		74183FBE2BB310C200CC62DB /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FBD2BB310C200CC62DB /* Device.swift */; };
+		74183FC02BB310E700CC62DB /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FBF2BB310E700CC62DB /* DeviceList.swift */; };
+		74183FC22BB3110700CC62DB /* DeviceInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */; };
+		749573772BB45E25006C3FE4 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */; };
 		F5490896E553747FA200A63C /* Pods_SwiftyTesterX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAADB4258810D7FF84326F64 /* Pods_SwiftyTesterX.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +39,11 @@
 		74183FB12BB2F46E00CC62DB /* MainMenuModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuModuleBuilder.swift; sourceTree = "<group>"; };
 		74183FB52BB2FD9400CC62DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		74183FB72BB3057700CC62DB /* SimulatorsListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorsListModuleBuilder.swift; sourceTree = "<group>"; };
+		74183FBA2BB30FC700CC62DB /* ConsoleCommandActivator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleCommandActivator.swift; sourceTree = "<group>"; };
+		74183FBD2BB310C200CC62DB /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		74183FBF2BB310E700CC62DB /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoParser.swift; sourceTree = "<group>"; };
+		749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
 		9E21DEDE637AA61AC4C42668 /* Pods-SwiftyTesterX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyTesterX.release.xcconfig"; path = "Target Support Files/Pods-SwiftyTesterX/Pods-SwiftyTesterX.release.xcconfig"; sourceTree = "<group>"; };
 		EAADB4258810D7FF84326F64 /* Pods_SwiftyTesterX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyTesterX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,6 +90,7 @@
 		74183F8D2BB2E7C200CC62DB /* SwiftyTesterX */ = {
 			isa = PBXGroup;
 			children = (
+				74183FB92BB30FAC00CC62DB /* Common */,
 				74183FAE2BB2F18D00CC62DB /* FlowCoordinators */,
 				74183F9D2BB2E7FB00CC62DB /* Modules */,
 				74183F8E2BB2E7C200CC62DB /* AppDelegate.swift */,
@@ -112,6 +123,7 @@
 		74183F9F2BB2E8BA00CC62DB /* SimulatorsList */ = {
 			isa = PBXGroup;
 			children = (
+				74183FBC2BB310B500CC62DB /* Models */,
 				74183FA72BB2E9DE00CC62DB /* Presenter */,
 				74183FA42BB2E9BA00CC62DB /* View */,
 				74183FB72BB3057700CC62DB /* SimulatorsListModuleBuilder.swift */,
@@ -138,6 +150,7 @@
 		74183FA42BB2E9BA00CC62DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				749573752BB45E15006C3FE4 /* Cells */,
 				74183FAC2BB2EB7B00CC62DB /* SimulatorsListViewController.swift */,
 			);
 			path = View;
@@ -157,6 +170,32 @@
 				74183FAF2BB2F1B700CC62DB /* MainMenuFlowCoordinator.swift */,
 			);
 			path = FlowCoordinators;
+			sourceTree = "<group>";
+		};
+		74183FB92BB30FAC00CC62DB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				74183FBA2BB30FC700CC62DB /* ConsoleCommandActivator.swift */,
+				74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		74183FBC2BB310B500CC62DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74183FBD2BB310C200CC62DB /* Device.swift */,
+				74183FBF2BB310E700CC62DB /* DeviceList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		749573752BB45E15006C3FE4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9C245C307191D5D945BA8F4D /* Frameworks */ = {
@@ -280,15 +319,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74183FBE2BB310C200CC62DB /* Device.swift in Sources */,
 				74183FB22BB2F46E00CC62DB /* MainMenuModuleBuilder.swift in Sources */,
 				74183FB82BB3057700CC62DB /* SimulatorsListModuleBuilder.swift in Sources */,
+				74183FC02BB310E700CC62DB /* DeviceList.swift in Sources */,
 				74183FAD2BB2EB7B00CC62DB /* SimulatorsListViewController.swift in Sources */,
 				74183FB62BB2FD9400CC62DB /* main.swift in Sources */,
 				74183F912BB2E7C200CC62DB /* MainViewController.swift in Sources */,
+				74183FBB2BB30FC700CC62DB /* ConsoleCommandActivator.swift in Sources */,
+				74183FC22BB3110700CC62DB /* DeviceInfoParser.swift in Sources */,
 				74183F8F2BB2E7C200CC62DB /* AppDelegate.swift in Sources */,
 				74183FA32BB2E96D00CC62DB /* MainMenuPresenter.swift in Sources */,
 				74183FB02BB2F1B700CC62DB /* MainMenuFlowCoordinator.swift in Sources */,
 				74183FA92BB2E9F000CC62DB /* SimulatorsListPresenter.swift in Sources */,
+				749573772BB45E25006C3FE4 /* DeviceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

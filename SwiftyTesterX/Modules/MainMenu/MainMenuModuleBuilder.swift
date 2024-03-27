@@ -18,8 +18,8 @@ final class MainMenuModuleBuilder {
     
     func build() -> NSViewController {
         let presenter = MainMenuPresenter()
-        let viewController = MainViewController()
-        viewController.output = presenter
+        presenter.moduleOutput = moduleOutput
+        let viewController = MainViewController(output: presenter)
         return viewController
     }
 }

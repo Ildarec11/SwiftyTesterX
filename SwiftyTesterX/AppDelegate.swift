@@ -9,15 +9,13 @@ import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    private var window: NSWindow!
     private var rootFlowCoordinator: MainMenuFlowCoordinator!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        window = NSWindow(contentViewController: MainViewController())
-        window.makeKeyAndOrderFront(nil)
+        let window = NSWindow()
+        window.title = "SwiftyTesterX"
         startMainFlowCoordinator(window: window)
-        print("-- tes")
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

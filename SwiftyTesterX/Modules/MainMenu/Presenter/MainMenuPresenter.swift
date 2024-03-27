@@ -23,7 +23,6 @@ final class MainMenuPresenter: MainMenuModuleInput {
 extension MainMenuPresenter: MainViewControllerOutput {
 
     func recordButtonDidPressed() {
-        print("-- pressed")
         moduleOutput?.moduleWantsToGoNext(self)
     }
 }

@@ -17,11 +17,21 @@ protocol MainViewControllerInput: AnyObject {}
 
 final class MainViewController: NSViewController {
     
-    weak var output: MainViewControllerOutput?
+    var output: MainViewControllerOutput
+    
+    init(output: MainViewControllerOutput) {
+        self.output = output
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupBlurEffect()
         setupRecordButton()
         setupLabel()
     }
@@ -46,11 +56,28 @@ final class MainViewController: NSViewController {
             make.bottom.equalToSuperview().offset(-50)
         }
     }
+    
+    private func setupBlurEffect() {
+        let visualEffectView = NSVisualEffectView()
+        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Устанавливаем стиль размытия (блюра)
+        visualEffectView.material = .hudWindow
+        visualEffectView.blendingMode = .behindWindow
+        
+        // Добавляем NSVisualEffectView на вью контроллер
+        self.view.addSubview(visualEffectView)
+        
+        // Устанавливаем констрейнты для NSVisualEffectView
+        visualEffectView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
 }
 
 extension MainViewController: MainViewControllerOutput {
     
     @objc func recordButtonDidPressed() {
-        output?.recordButtonDidPressed()
+        output.recordButtonDidPressed()
     }
 }
