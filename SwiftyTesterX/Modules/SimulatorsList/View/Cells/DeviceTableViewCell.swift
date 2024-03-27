@@ -71,7 +71,7 @@ class DeviceTableViewCell: NSTableCellView {
         
         statusLabel.snp.makeConstraints { make in
             make.top.equalTo(identifierLabel.snp.bottom).offset(8)
-            make.left.equalToSuperview().offset(8)
+            make.left.equalToSuperview().offset(4)
             make.right.equalToSuperview().offset(-8)
         }
         
