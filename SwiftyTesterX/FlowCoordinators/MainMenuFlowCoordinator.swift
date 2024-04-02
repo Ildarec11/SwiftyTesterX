@@ -21,6 +21,8 @@ final class MainMenuFlowCoordinator {
     }
 }
 
+// MARK: MainMenuModuleOutput
+
 extension MainMenuFlowCoordinator: MainMenuModuleOutput {
     
     func moduleWantsToGoNext(_ input: MainMenuModuleInput) {
@@ -31,4 +33,16 @@ extension MainMenuFlowCoordinator: MainMenuModuleOutput {
     }
 }
 
-extension MainMenuFlowCoordinator: SimulatorsListModuleOutput {}
+// MARK: SimulatorsListModuleOutput
+
+extension MainMenuFlowCoordinator: SimulatorsListModuleOutput {
+
+    func moduleWantsToGoNextWithSelectedDevice(deviceUUID: String) {
+        let builder = AppsListModuleBuilder(moduleOutput: self, deviceUUID: deviceUUID)
+        let vc = builder.build()
+        window.contentViewController = vc
+        window.makeKeyAndOrderFront(nil)
+    }
+}
+
+extension MainMenuFlowCoordinator: AppsListModuleOutput { }

@@ -7,7 +7,9 @@
 
 import Cocoa
 
-protocol SimulatorsListModuleOutput: AnyObject {}
+protocol SimulatorsListModuleOutput: AnyObject {
+    func moduleWantsToGoNextWithSelectedDevice(deviceUUID: String)
+}
 
 protocol SimulatorsListModuleInput: AnyObject {}
 

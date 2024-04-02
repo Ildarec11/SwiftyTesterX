@@ -22,6 +22,12 @@
 		74183FC02BB310E700CC62DB /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FBF2BB310E700CC62DB /* DeviceList.swift */; };
 		74183FC22BB3110700CC62DB /* DeviceInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */; };
 		749573772BB45E25006C3FE4 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */; };
+		7495737C2BB465DD006C3FE4 /* AppsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737B2BB465DD006C3FE4 /* AppsListPresenter.swift */; };
+		7495737E2BB465F1006C3FE4 /* AppsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */; };
+		749573802BB46603006C3FE4 /* AppsListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737F2BB46603006C3FE4 /* AppsListModuleBuilder.swift */; };
+		749573832BB4661B006C3FE4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749573822BB4661B006C3FE4 /* App.swift */; };
+		74EA6A892BBC350F00A5B1DF /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EA6A882BBC350F00A5B1DF /* AppTableViewCell.swift */; };
+		74EA6A8B2BBC3D1300A5B1DF /* AppInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EA6A8A2BBC3D1300A5B1DF /* AppInfoParser.swift */; };
 		F5490896E553747FA200A63C /* Pods_SwiftyTesterX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAADB4258810D7FF84326F64 /* Pods_SwiftyTesterX.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +50,12 @@
 		74183FBF2BB310E700CC62DB /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoParser.swift; sourceTree = "<group>"; };
 		749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		7495737B2BB465DD006C3FE4 /* AppsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListPresenter.swift; sourceTree = "<group>"; };
+		7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListViewController.swift; sourceTree = "<group>"; };
+		7495737F2BB46603006C3FE4 /* AppsListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListModuleBuilder.swift; sourceTree = "<group>"; };
+		749573822BB4661B006C3FE4 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		74EA6A882BBC350F00A5B1DF /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
+		74EA6A8A2BBC3D1300A5B1DF /* AppInfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoParser.swift; sourceTree = "<group>"; };
 		9E21DEDE637AA61AC4C42668 /* Pods-SwiftyTesterX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyTesterX.release.xcconfig"; path = "Target Support Files/Pods-SwiftyTesterX/Pods-SwiftyTesterX.release.xcconfig"; sourceTree = "<group>"; };
 		EAADB4258810D7FF84326F64 /* Pods_SwiftyTesterX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyTesterX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +116,7 @@
 		74183F9D2BB2E7FB00CC62DB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				749573782BB465BC006C3FE4 /* AppsList */,
 				74183F9F2BB2E8BA00CC62DB /* SimulatorsList */,
 				74183F9E2BB2E80700CC62DB /* MainMenu */,
 			);
@@ -177,6 +190,7 @@
 			children = (
 				74183FBA2BB30FC700CC62DB /* ConsoleCommandActivator.swift */,
 				74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */,
+				74EA6A8A2BBC3D1300A5B1DF /* AppInfoParser.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -194,6 +208,50 @@
 			isa = PBXGroup;
 			children = (
 				749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		749573782BB465BC006C3FE4 /* AppsList */ = {
+			isa = PBXGroup;
+			children = (
+				749573812BB46610006C3FE4 /* Models */,
+				7495737A2BB465CC006C3FE4 /* View */,
+				749573792BB465C6006C3FE4 /* Presenter */,
+				7495737F2BB46603006C3FE4 /* AppsListModuleBuilder.swift */,
+			);
+			path = AppsList;
+			sourceTree = "<group>";
+		};
+		749573792BB465C6006C3FE4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7495737B2BB465DD006C3FE4 /* AppsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7495737A2BB465CC006C3FE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				74EA6A872BBC34F100A5B1DF /* Cells */,
+				7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		749573812BB46610006C3FE4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				749573822BB4661B006C3FE4 /* App.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		74EA6A872BBC34F100A5B1DF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				74EA6A882BBC350F00A5B1DF /* AppTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -319,19 +377,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74EA6A892BBC350F00A5B1DF /* AppTableViewCell.swift in Sources */,
 				74183FBE2BB310C200CC62DB /* Device.swift in Sources */,
 				74183FB22BB2F46E00CC62DB /* MainMenuModuleBuilder.swift in Sources */,
 				74183FB82BB3057700CC62DB /* SimulatorsListModuleBuilder.swift in Sources */,
+				749573802BB46603006C3FE4 /* AppsListModuleBuilder.swift in Sources */,
 				74183FC02BB310E700CC62DB /* DeviceList.swift in Sources */,
 				74183FAD2BB2EB7B00CC62DB /* SimulatorsListViewController.swift in Sources */,
 				74183FB62BB2FD9400CC62DB /* main.swift in Sources */,
+				7495737E2BB465F1006C3FE4 /* AppsListViewController.swift in Sources */,
 				74183F912BB2E7C200CC62DB /* MainViewController.swift in Sources */,
+				749573832BB4661B006C3FE4 /* App.swift in Sources */,
 				74183FBB2BB30FC700CC62DB /* ConsoleCommandActivator.swift in Sources */,
 				74183FC22BB3110700CC62DB /* DeviceInfoParser.swift in Sources */,
 				74183F8F2BB2E7C200CC62DB /* AppDelegate.swift in Sources */,
 				74183FA32BB2E96D00CC62DB /* MainMenuPresenter.swift in Sources */,
 				74183FB02BB2F1B700CC62DB /* MainMenuFlowCoordinator.swift in Sources */,
+				74EA6A8B2BBC3D1300A5B1DF /* AppInfoParser.swift in Sources */,
 				74183FA92BB2E9F000CC62DB /* SimulatorsListPresenter.swift in Sources */,
+				7495737C2BB465DD006C3FE4 /* AppsListPresenter.swift in Sources */,
 				749573772BB45E25006C3FE4 /* DeviceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

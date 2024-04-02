@@ -8,7 +8,7 @@
 import Cocoa
 import SnapKit
 
-class DeviceTableViewCell: NSTableCellView {
+final class DeviceTableViewCell: NSTableCellView {
     let nameLabel = NSTextField()
     let identifierLabel = NSTextField()
     let statusLabel = NSTextField()
@@ -21,6 +21,14 @@ class DeviceTableViewCell: NSTableCellView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with device: Device) {
+        nameLabel.stringValue = device.name
+        identifierLabel.stringValue = "\(device.identifier)"
+        statusLabel.stringValue = "\(device.status)"
+        osLabel.stringValue = "\(device.os)"
+
     }
     
     private func setupViews() {
