@@ -45,4 +45,9 @@ extension MainMenuFlowCoordinator: SimulatorsListModuleOutput {
     }
 }
 
-extension MainMenuFlowCoordinator: AppsListModuleOutput { }
+extension MainMenuFlowCoordinator: AppsListModuleOutput {
+
+    func moduleWantsToGoNextWithSelectedBundleID(_ bundleID: String) {
+        // TODO
+    }
+}

@@ -37,7 +37,7 @@ extension AppsListPresenter: AppsListViewOutput {
         showAvailableApps()
     }
     
-    func didSelectedApp() {
-        // unused
+    func didSelectedApp(bundleID: String) {
+        
     }
 }

@@ -7,7 +7,9 @@
 
 import Cocoa
 
-protocol AppsListModuleOutput: AnyObject {}
+protocol AppsListModuleOutput: AnyObject {
+    func moduleWantsToGoNextWithSelectedBundleID(_ bundleID: String)
+}
 
 protocol AppsListModuleInput: AnyObject {}
 

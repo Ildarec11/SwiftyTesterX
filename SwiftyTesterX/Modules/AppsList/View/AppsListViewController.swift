@@ -13,7 +13,7 @@ protocol AppsListViewInput: AnyObject {
 
 protocol AppsListViewOutput: AnyObject {
     func viewDidLoad()
-    func didSelectedApp()
+    func didSelectedApp(bundleID: String)
 }
 
 final class AppsListViewController: NSViewController, AppsListViewInput {
@@ -114,5 +114,6 @@ extension AppsListViewController: NSTableViewDelegate {
         let selectedRow = tableView.selectedRow
 
         let selectedApp = apps[selectedRow]
+        output.didSelectedApp(bundleID: selectedApp.bundleIdentifier)
     }
 }
