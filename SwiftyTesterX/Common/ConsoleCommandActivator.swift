@@ -35,9 +35,19 @@ final class ConsoleCommandActivator {
 
         process.launch()
         let pipe = process.standardOutput as! Pipe
-        // let data = pipe.fileHandleForReading.readDataToEndOfFile()
 
         process.waitUntilExit()
+    }
+    
+    func showSimulator() {
+        let workspace = NSWorkspace.shared
+        let simulatorAppURL = URL(fileURLWithPath: "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app")
+
+        do {
+            try workspace.open(simulatorAppURL)
+        } catch {
+            print("Simulator show failed: \(error.localizedDescription)")
+        }
     }
     
     func appsList(deviceUUID: String) -> String? {
@@ -56,5 +66,24 @@ final class ConsoleCommandActivator {
 
         process.waitUntilExit()
         return nil
+    }
+    
+    func startApp(bundleID: String) {
+        let process = Process()
+        
+        process.launchPath = "/usr/bin/xcrun"
+        process.arguments = ["simctl", "launch", "booted", bundleID]
+        process.standardOutput = Pipe()
+
+        process.launch()
+
+        let pipe = process.standardOutput as! Pipe
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+
+        process.waitUntilExit()
+    }
+    
+    func startCollectingLogs() {
+        
     }
 }

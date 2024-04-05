@@ -45,9 +45,18 @@ extension MainMenuFlowCoordinator: SimulatorsListModuleOutput {
     }
 }
 
+// MARK: AppsListModuleOutput
+
 extension MainMenuFlowCoordinator: AppsListModuleOutput {
 
     func moduleWantsToGoNextWithSelectedBundleID(_ bundleID: String) {
-        // TODO
+        let builder = ResultSummaryModuleBuilder(moduleOutput: self, appBundleID: bundleID)
+        let vc = builder.build()
+        window.contentViewController = vc
+        window.makeKeyAndOrderFront(nil)
     }
 }
+
+// MARK: ResultSummaryModuleOutput
+
+extension MainMenuFlowCoordinator: ResultSummaryModuleOutput {}

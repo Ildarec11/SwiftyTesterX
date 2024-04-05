@@ -35,6 +35,8 @@ extension SimulatorsListPresenter: SimulatorsListViewOutput {
     }
     
     func viewDidLoad() {
-        loadDevicesList()
+        DispatchQueue.main.async {
+            self.loadDevicesList()
+        }
     }
 }

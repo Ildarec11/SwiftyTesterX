@@ -13,7 +13,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        let window = NSWindow()
+        let window = NSWindow(contentRect: NSRect(origin: .zero, size: .init(width: 2000, height: 1000)),
+                              styleMask: [.titled, .closable, .resizable, .miniaturizable],
+                              backing: .buffered,
+                              defer: false)
+
         window.title = "SwiftyTesterX"
         startMainFlowCoordinator(window: window)
     }

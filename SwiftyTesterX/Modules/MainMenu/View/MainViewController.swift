@@ -31,9 +31,13 @@ final class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let viewSize = NSSize(width: 800, height: 500)
+        self.view.setFrameSize(viewSize)
+        
         setupBlurEffect()
         setupRecordButton()
         setupLabel()
+        setupImageView()
     }
     
     private func setupLabel() {
@@ -42,7 +46,8 @@ final class MainViewController: NSViewController {
         view.addSubview(label)
 
         label.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(view.snp.centerY).offset(150)
         }
     }
     
@@ -54,6 +59,19 @@ final class MainViewController: NSViewController {
         button.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-50)
+        }
+    }
+    
+    private func setupImageView() {
+    
+        let imageView = NSImageView(image: NSImage(named: "SwiftIcon")!)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(imageView)
+        
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalTo(200)
+            make.height.equalTo(200)
         }
     }
     

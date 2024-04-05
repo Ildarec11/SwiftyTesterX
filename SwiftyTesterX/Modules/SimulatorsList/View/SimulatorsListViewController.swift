@@ -55,6 +55,8 @@ final class SimulatorsListViewController: NSViewController, SimulatorsListViewIn
         super.viewDidLoad()
         output.viewDidLoad()
 
+        let viewSize = NSSize(width: 800, height: 500)
+        self.view.setFrameSize(viewSize)
         setupScrollView()
     }
     

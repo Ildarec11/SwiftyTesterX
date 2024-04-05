@@ -22,8 +22,19 @@ final class AppsListViewController: NSViewController, AppsListViewInput {
 
     private var apps: [App] = []
     
+    private let loader: NSProgressIndicator = {
+        let progressIndicator = NSProgressIndicator()
+        progressIndicator.style = .spinning
+        progressIndicator.controlSize = .regular
+        progressIndicator.isIndeterminate = true
+        progressIndicator.isHidden = false // Начально скрываем лоадер
+        progressIndicator.startAnimation(nil)
+        return progressIndicator
+    }()
+    
     private lazy var tableView: NSTableView = {
         let tableView = NSTableView()
+        tableView.isHidden = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -54,19 +65,34 @@ final class AppsListViewController: NSViewController, AppsListViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let viewSize = NSSize(width: 800, height: 500)
+        self.view.setFrameSize(viewSize)
+
         setupScrollView()
+        setupLoader()
         output.viewDidLoad()
     }
     
     func showAvailableApps(apps: [App]) {
+        loader.isHidden = true
+        tableView.isHidden = false
         self.apps = apps
         tableView.reloadData()
+    }
+
+    private func setupLoader() {
+        view.addSubview(loader)
+        
+        loader.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
     
     private func setupScrollView() {
         let scrollView = NSScrollView()
         scrollView.documentView = tableView
         scrollView.hasVerticalScroller = true
+        scrollView.backgroundColor = .clear
         
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in

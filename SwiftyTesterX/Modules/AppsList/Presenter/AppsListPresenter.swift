@@ -26,6 +26,7 @@ final class AppsListPresenter {
             print("-- Something went wrong. Failed fetch apps")
             return
         }
+        consoleCommandActivator.showSimulator()
         let apps = appsParser.parseAvailableApps(appsListString)
         view?.showAvailableApps(apps: apps)
     }
@@ -34,10 +35,12 @@ final class AppsListPresenter {
 extension AppsListPresenter: AppsListViewOutput {
 
     func viewDidLoad() {
-        showAvailableApps()
+        DispatchQueue.main.async {
+            self.showAvailableApps()
+        }
     }
     
     func didSelectedApp(bundleID: String) {
-        
+        moduleOutput?.moduleWantsToGoNextWithSelectedBundleID(bundleID)
     }
 }

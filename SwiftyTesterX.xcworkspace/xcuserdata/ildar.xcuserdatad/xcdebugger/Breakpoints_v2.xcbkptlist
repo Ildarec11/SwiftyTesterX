@@ -3,4 +3,228 @@
    uuid = "3E0CAE37-428C-48EB-972B-B8A707F9D4EB"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A04C5B00-6C9D-4707-B4F9-F12936D4B50F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "addLogValueToTest(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A04C5B00-6C9D-4707-B4F9-F12936D4B50F - 55caf6c8a4c13861"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.addLogValueToTest(Swift.String) -&gt; ()"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "A04C5B00-6C9D-4707-B4F9-F12936D4B50F - 55caf6c8a4c13861"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.addLogValueToTest(Swift.String) -&gt; ()"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "676">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F58BA8A5-1A11-4D3C-92AB-3E72EEDEF516"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "addLogValueToTest(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F58BA8A5-1A11-4D3C-92AB-3E72EEDEF516 - 55caf6c8a4c1398c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.addLogValueToTest(Swift.String) -&gt; ()"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "884">
+               </Location>
+               <Location
+                  uuid = "F58BA8A5-1A11-4D3C-92AB-3E72EEDEF516 - 55caf6c8a4c1398c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.addLogValueToTest(Swift.String) -&gt; ()"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "912">
+               </Location>
+               <Location
+                  uuid = "F58BA8A5-1A11-4D3C-92AB-3E72EEDEF516 - 55caf6c8a4c1398c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.addLogValueToTest(Swift.String) -&gt; ()"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1348">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8E780D9-3927-477B-96B1-B63210E425E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "addLogValueToTest(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8E780D9-3927-477B-96B1-B63210E425E1 - 55caf6c8a4c1392b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.addLogValueToTest(Swift.String) -&gt; ()"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1552">
+               </Location>
+               <Location
+                  uuid = "E8E780D9-3927-477B-96B1-B63210E425E1 - 55caf6c8a4c1392b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.addLogValueToTest(Swift.String) -&gt; ()"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1580">
+               </Location>
+               <Location
+                  uuid = "E8E780D9-3927-477B-96B1-B63210E425E1 - 55caf6c8a4c1392b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.addLogValueToTest(Swift.String) -&gt; ()"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "2028">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0DAB514-2E50-4FCF-A0AA-CC3A22781E0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "extractAccessibilityIdentifier(gestureInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C0DAB514-2E50-4FCF-A0AA-CC3A22781E0D - d98eb2abea88248a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.extractAccessibilityIdentifier(gestureInfo: Swift.String) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "C0DAB514-2E50-4FCF-A0AA-CC3A22781E0D - d98eb2abea88248a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftyTesterX.GestureLogToTestConverter.extractAccessibilityIdentifier(gestureInfo: Swift.String) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "SwiftyTesterX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ildar/Developer/SwiftyTesterX/SwiftyTesterX/Modules/ResultSummary/View/GestureLogToTestConverter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "568">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
