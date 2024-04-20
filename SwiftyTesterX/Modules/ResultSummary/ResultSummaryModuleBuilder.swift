@@ -23,7 +23,7 @@ final class ResultSummaryModuleBuilder {
     func build() -> NSViewController {
         let presenter = ResultSummaryPresenter(appBundleID: appBundleID)
         presenter.moduleOutput = moduleOutput
-        let view = ResultSummaryViewController(output: presenter)
+        let view = ResultSummaryMainViewController(output: presenter)
         presenter.view = view
         return view
     }

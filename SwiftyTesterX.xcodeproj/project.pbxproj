@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7411CAF22BBEBAE500CB7A8F /* SimulatorLogCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7411CAF12BBEBAE500CB7A8F /* SimulatorLogCollector.swift */; };
+		74127BB42BCADE8F00C3AE00 /* GestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74127BB32BCADE8F00C3AE00 /* GestureType.swift */; };
 		74183F8F2BB2E7C200CC62DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183F8E2BB2E7C200CC62DB /* AppDelegate.swift */; };
 		74183F912BB2E7C200CC62DB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183F902BB2E7C200CC62DB /* MainViewController.swift */; };
 		74183F932BB2E7C300CC62DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74183F922BB2E7C300CC62DB /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 		74183FBE2BB310C200CC62DB /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FBD2BB310C200CC62DB /* Device.swift */; };
 		74183FC02BB310E700CC62DB /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FBF2BB310E700CC62DB /* DeviceList.swift */; };
 		74183FC22BB3110700CC62DB /* DeviceInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */; };
+		74754BC22BD3F9B70098D760 /* ResultSummaryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74754BC12BD3F9B70098D760 /* ResultSummaryMainViewController.swift */; };
+		74754BC42BD3FA010098D760 /* ResultSummarySideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74754BC32BD3FA010098D760 /* ResultSummarySideBarViewController.swift */; };
 		749573772BB45E25006C3FE4 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */; };
 		7495737C2BB465DD006C3FE4 /* AppsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737B2BB465DD006C3FE4 /* AppsListPresenter.swift */; };
 		7495737E2BB465F1006C3FE4 /* AppsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */; };
@@ -39,6 +42,7 @@
 /* Begin PBXFileReference section */
 		1D710AAD7DA5901C485BA30B /* Pods-SwiftyTesterX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyTesterX.debug.xcconfig"; path = "Target Support Files/Pods-SwiftyTesterX/Pods-SwiftyTesterX.debug.xcconfig"; sourceTree = "<group>"; };
 		7411CAF12BBEBAE500CB7A8F /* SimulatorLogCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorLogCollector.swift; sourceTree = "<group>"; };
+		74127BB32BCADE8F00C3AE00 /* GestureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureType.swift; sourceTree = "<group>"; };
 		74183F8B2BB2E7C200CC62DB /* SwiftyTesterX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyTesterX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74183F8E2BB2E7C200CC62DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74183F902BB2E7C200CC62DB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 		74183FBD2BB310C200CC62DB /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		74183FBF2BB310E700CC62DB /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoParser.swift; sourceTree = "<group>"; };
+		74754BC12BD3F9B70098D760 /* ResultSummaryMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSummaryMainViewController.swift; sourceTree = "<group>"; };
+		74754BC32BD3FA010098D760 /* ResultSummarySideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSummarySideBarViewController.swift; sourceTree = "<group>"; };
 		749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
 		7495737B2BB465DD006C3FE4 /* AppsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListPresenter.swift; sourceTree = "<group>"; };
 		7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 				74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */,
 				74EA6A8A2BBC3D1300A5B1DF /* AppInfoParser.swift */,
 				7411CAF12BBEBAE500CB7A8F /* SimulatorLogCollector.swift */,
+				74127BB32BCADE8F00C3AE00 /* GestureType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -283,6 +290,8 @@
 			children = (
 				74EA6A932BBC562B00A5B1DF /* ResultSummaryViewController.swift */,
 				74DEFDDA2BC023B000FBDB0C /* GestureLogToTestConverter.swift */,
+				74754BC12BD3F9B70098D760 /* ResultSummaryMainViewController.swift */,
+				74754BC32BD3FA010098D760 /* ResultSummarySideBarViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -421,6 +430,7 @@
 				74183FB22BB2F46E00CC62DB /* MainMenuModuleBuilder.swift in Sources */,
 				74183FB82BB3057700CC62DB /* SimulatorsListModuleBuilder.swift in Sources */,
 				749573802BB46603006C3FE4 /* AppsListModuleBuilder.swift in Sources */,
+				74127BB42BCADE8F00C3AE00 /* GestureType.swift in Sources */,
 				74DEFDDB2BC023B000FBDB0C /* GestureLogToTestConverter.swift in Sources */,
 				74183FC02BB310E700CC62DB /* DeviceList.swift in Sources */,
 				74EA6A902BBC555100A5B1DF /* ResultSummaryModuleBuilder.swift in Sources */,
@@ -432,6 +442,7 @@
 				749573832BB4661B006C3FE4 /* App.swift in Sources */,
 				74183FBB2BB30FC700CC62DB /* ConsoleCommandActivator.swift in Sources */,
 				74183FC22BB3110700CC62DB /* DeviceInfoParser.swift in Sources */,
+				74754BC42BD3FA010098D760 /* ResultSummarySideBarViewController.swift in Sources */,
 				74EA6A922BBC557A00A5B1DF /* ResultSummaryPresenter.swift in Sources */,
 				74183F8F2BB2E7C200CC62DB /* AppDelegate.swift in Sources */,
 				74183FA32BB2E96D00CC62DB /* MainMenuPresenter.swift in Sources */,
@@ -441,6 +452,7 @@
 				7495737C2BB465DD006C3FE4 /* AppsListPresenter.swift in Sources */,
 				749573772BB45E25006C3FE4 /* DeviceTableViewCell.swift in Sources */,
 				74EA6A942BBC562B00A5B1DF /* ResultSummaryViewController.swift in Sources */,
+				74754BC22BD3F9B70098D760 /* ResultSummaryMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,12 +13,13 @@ protocol ResultSummaryViewInput: AnyObject {
 
 protocol ResultSummaryViewOutput: AnyObject {
     func viewDidLoad()
+    func viewDidToggleGestureSelect(isPanSelected: Bool)
     func copySummaryText(_ text: String)
 }
 
 final class ResultSummaryViewController: NSViewController, ResultSummaryViewInput {
 
-    private var output: ResultSummaryViewOutput
+    var output: ResultSummaryViewOutput?
 
     private lazy var summaryTextView: NSTextView = {
         let textView = NSTextView()
@@ -43,15 +44,7 @@ final class ResultSummaryViewController: NSViewController, ResultSummaryViewInpu
         scrollView.documentView = summaryTextView
         return scrollView
     }()
-
-    init(output: ResultSummaryViewOutput) {
-        self.output = output
-        super.init(nibName: nil, bundle: nil)
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +65,8 @@ final class ResultSummaryViewController: NSViewController, ResultSummaryViewInpu
             make.right.equalToSuperview().offset(-20)
             make.bottom.equalTo(copyButton.snp.top).offset(-20)
         }
-
-        // Уведомляем презентера, что экран загружен
-        output.viewDidLoad()
+        
+        output?.viewDidLoad()
     }
 
     func updateSummaryText(_ text: String) {
@@ -83,6 +75,6 @@ final class ResultSummaryViewController: NSViewController, ResultSummaryViewInpu
     }
     
     @objc func copyButtonClicked() {
-        output.copySummaryText(summaryTextView.string)
+        output?.copySummaryText(summaryTextView.string)
     }
 }

@@ -8,9 +8,10 @@
 import Foundation
 
 final class GestureLogToTestConverter {
+    
+    var isPanGesturePrefered = false
 
     private var currentLineIndex = 15
-    
     private var currentTestString =
     """
     //
@@ -44,6 +45,20 @@ final class GestureLogToTestConverter {
             return
         }
         
+        guard let type = extractGestureType(inputString: info) else {
+            print("-- Failed: can'g get gesture type")
+            return
+        }
+        switch type {
+        case .tap:
+            appendNewValueForTapGesture(info: info)
+        case .swipe(let direction):
+            break
+            // do here
+        }
+    }
+    
+    private func appendNewValueForTapGesture(info: String) {
         if let accessibilityIdentifier = extractAccessibilityIdentifier(gestureInfo: info) {
             print("-- accessibilityIdentifier \(accessibilityIdentifier)")
             appendNewValueToCurrentTestString("app.otherElements[\"\(accessibilityIdentifier)\"].tap()")
@@ -75,6 +90,32 @@ final class GestureLogToTestConverter {
                     return extractedString
                 }
             }
+        }
+        return nil
+    }
+    
+    private func extractGestureType(inputString: String) -> GestureType? {
+        let arr = inputString.components(separatedBy: "|")
+        guard let type = arr.first else { return nil }
+        print("-- type :\(type)")
+        if type.starts(with: "TapGesture") {
+            return .tap
+        } else if type.starts(with: "Swipe") {
+            guard let direction = extractDirection(direction: arr[1]) else { return nil }
+            return .swipe(direction: direction)
+        }
+        return nil
+    }
+    
+    private func extractDirection(direction: String) -> GestureType.SwipeDirection? {
+        if direction == "Left" {
+            return .left
+        } else if direction == "Right" {
+            return .right
+        } else if direction == "Up" {
+            return .up
+        } else if direction == "Down" {
+            return .down
         }
         return nil
     }

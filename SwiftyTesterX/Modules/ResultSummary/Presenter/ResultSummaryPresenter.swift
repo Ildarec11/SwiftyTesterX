@@ -25,10 +25,14 @@ final class ResultSummaryPresenter {
 
 extension ResultSummaryPresenter: ResultSummaryViewOutput {
 
+    func viewDidToggleGestureSelect(isPanSelected: Bool) {
+        logToTestConverter.isPanGesturePrefered = isPanSelected
+    }
+    
     func copySummaryText(_ text: String) {
         let pasteboard = NSPasteboard.general
-        pasteboard.clearContents() // Очищаем содержимое буфера обмена перед копированием новой информации
-        pasteboard.setString(text, forType: .string) // Копируем текст из summaryTextView в буфер обмена
+        pasteboard.clearContents()
+        pasteboard.setString(text, forType: .string)
     }
     
     func viewDidLoad() {
