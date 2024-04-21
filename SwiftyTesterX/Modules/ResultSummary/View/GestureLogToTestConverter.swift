@@ -7,9 +7,17 @@
 
 import Foundation
 
+protocol GestureLogToTestConverterDelegate: AnyObject {
+    func askInterpolationPointsCount(closure: @escaping (Int) -> Void)
+}
+
 final class GestureLogToTestConverter {
     
+    weak var delegate: GestureLogToTestConverterDelegate?
+    
     var isPanGesturePrefered = false
+    
+    var lastPanGesture: [CGPoint] = []
 
     private var currentLineIndex = 15
     private var currentTestString =
@@ -34,6 +42,10 @@ final class GestureLogToTestConverter {
     }
     """
     
+    init(delegate: GestureLogToTestConverterDelegate) {
+        self.delegate = delegate
+    }
+    
     func getCurrentTestString() -> String {
         return currentTestString
     }
@@ -53,8 +65,51 @@ final class GestureLogToTestConverter {
         case .tap:
             appendNewValueForTapGesture(info: info)
         case .swipe(let direction):
-            break
-            // do here
+            if !isPanGesturePrefered {
+                appendNewValueForSwipeGesture(direction: direction, info: info)
+            }
+        case .pan(let type):
+            if isPanGesturePrefered {
+                appendNewValueForPanGesture(info: info, type: type)
+            }
+        }
+    }
+    
+    private func appendNewValueForPanGesture(info: String, type: GestureType.PanType) {
+        let location = extractLocation(gestureInfo: info)
+        guard let location else { return }
+        if type == .began {
+            lastPanGesture = []
+        }
+        lastPanGesture.append(location)
+        if type == .ended {
+            delegate?.askInterpolationPointsCount(closure: { count in
+                print("-- count \(count)")
+            })
+        }
+    }
+    
+    private func appendNewValueForSwipeGesture(direction: GestureType.SwipeDirection, info: String) {
+        let actionString: String
+        switch direction {
+        case .up:
+            actionString = "swipeUp()"
+        case .down:
+            actionString = "swipeDown()"
+        case .left:
+            actionString = "swipeLeft()"
+        case .right:
+            actionString = "swipeRight()"
+        }
+        if let accessibilityIdentifier = extractAccessibilityIdentifier(gestureInfo: info) {
+            print("-- accessibilityIdentifier \(accessibilityIdentifier)")
+            appendNewValueToCurrentTestString("app.otherElements[\"\(accessibilityIdentifier)\"].\(actionString)")
+        } else if let text = extractText(gestureInfo: info) {
+            print("-- text \(text)")
+            appendNewValueToCurrentTestString("app.staticTexts[\"\(text)\"].\(actionString)")
+        } else if let location = extractLocation(gestureInfo: info) {
+            print("-- location \(location)")
+            appendNewValueToCurrentTestString("app.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: \(location.x), dy: \(location.y)).\(actionString)")
         }
     }
     
@@ -103,8 +158,23 @@ final class GestureLogToTestConverter {
         } else if type.starts(with: "Swipe") {
             guard let direction = extractDirection(direction: arr[1]) else { return nil }
             return .swipe(direction: direction)
+        } else if type.starts(with: "Pan") {
+            guard let status = extractPanStatus(status: arr[1]) else { return nil }
+            return .pan(type: status)
         }
         return nil
+    }
+    
+    private func extractPanStatus(status: String) -> GestureType.PanType? {
+        if status == "began" {
+            return .began
+        } else if status == "changed" {
+            return .changed
+        } else if status == "ended" {
+            return .ended
+        } else {
+            return nil
+        }
     }
     
     private func extractDirection(direction: String) -> GestureType.SwipeDirection? {

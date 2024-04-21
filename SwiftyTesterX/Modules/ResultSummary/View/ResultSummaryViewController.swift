@@ -9,6 +9,7 @@ import Cocoa
 
 protocol ResultSummaryViewInput: AnyObject {
     func updateSummaryText(_ text: String)
+    func askInterpolationPointsCount(closure: @escaping (Int) -> Void)
 }
 
 protocol ResultSummaryViewOutput: AnyObject {
@@ -45,6 +46,7 @@ final class ResultSummaryViewController: NSViewController, ResultSummaryViewInpu
         return scrollView
     }()
     
+    private var askInterpolationPointsCountClosure: ((Int) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,10 +73,32 @@ final class ResultSummaryViewController: NSViewController, ResultSummaryViewInpu
 
     func updateSummaryText(_ text: String) {
         summaryTextView.string = text
-        print("-- new text \(text)")
+    }
+    
+    func askInterpolationPointsCount(closure: @escaping (Int) -> Void) {
+        askInterpolationPointsCountClosure = closure
+        showInterpolationPointsCountNotification()
     }
     
     @objc func copyButtonClicked() {
         output?.copySummaryText(summaryTextView.string)
+    }
+    
+    private func showInterpolationPointsCountNotification() {
+        let alert = NSAlert()
+        alert.messageText = "Распознан сложный жест"
+        alert.informativeText = "Введите число точек жеста:"
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+
+        let inputTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 24))
+        alert.accessoryView = inputTextField
+        alert.beginSheetModal(for: self.view.window!) { [weak self] response in
+            if response == .alertFirstButtonReturn {
+                if let number = Int(inputTextField.stringValue) {
+                    self?.askInterpolationPointsCountClosure?(number)
+                }
+            }
+        }
     }
 }

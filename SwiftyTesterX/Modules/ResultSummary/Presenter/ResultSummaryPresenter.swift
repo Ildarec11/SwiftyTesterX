@@ -15,7 +15,7 @@ final class ResultSummaryPresenter {
     private let appBundleID: String
     
     private let consoleCommandActivator = ConsoleCommandActivator()
-    private let logToTestConverter = GestureLogToTestConverter()
+    private var logToTestConverter: GestureLogToTestConverter!
     private var simulatorLogCollector: SimulatorLogCollector!
     
     init(appBundleID: String) {
@@ -37,6 +37,7 @@ extension ResultSummaryPresenter: ResultSummaryViewOutput {
     
     func viewDidLoad() {
         simulatorLogCollector = SimulatorLogCollector(delegate: self)
+        logToTestConverter = GestureLogToTestConverter(delegate: self)
 
         DispatchQueue.main.async {
             self.consoleCommandActivator.startApp(bundleID: self.appBundleID)
@@ -51,5 +52,11 @@ extension ResultSummaryPresenter: SimulatorLogDelegate {
         logToTestConverter.addLogValueToTest(value)
         let currentString = logToTestConverter.getCurrentTestString()
         view?.updateSummaryText(currentString)
+    }
+}
+
+extension ResultSummaryPresenter: GestureLogToTestConverterDelegate {
+    func askInterpolationPointsCount(closure: @escaping (Int) -> Void) {
+        view?.askInterpolationPointsCount(closure: closure)
     }
 }

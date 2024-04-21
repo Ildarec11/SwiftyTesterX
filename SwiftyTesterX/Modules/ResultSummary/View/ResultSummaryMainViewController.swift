@@ -103,6 +103,10 @@ extension ResultSummaryMainViewController: NSToolbarDelegate {
 
 extension ResultSummaryMainViewController: ResultSummaryViewInput {
 
+    func askInterpolationPointsCount(closure: @escaping (Int) -> Void) {
+        resultSummaryViewController.askInterpolationPointsCount(closure: closure)
+    }
+
     func updateSummaryText(_ text: String) {
         resultSummaryViewController.updateSummaryText(text)
     }

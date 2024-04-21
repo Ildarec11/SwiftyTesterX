@@ -30,6 +30,7 @@
 		7495737E2BB465F1006C3FE4 /* AppsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */; };
 		749573802BB46603006C3FE4 /* AppsListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737F2BB46603006C3FE4 /* AppsListModuleBuilder.swift */; };
 		749573832BB4661B006C3FE4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749573822BB4661B006C3FE4 /* App.swift */; };
+		74BBBF692BD54B4B00DA1F59 /* PanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BBBF682BD54B4B00DA1F59 /* PanGesture.swift */; };
 		74DEFDDB2BC023B000FBDB0C /* GestureLogToTestConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DEFDDA2BC023B000FBDB0C /* GestureLogToTestConverter.swift */; };
 		74EA6A892BBC350F00A5B1DF /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EA6A882BBC350F00A5B1DF /* AppTableViewCell.swift */; };
 		74EA6A8B2BBC3D1300A5B1DF /* AppInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EA6A8A2BBC3D1300A5B1DF /* AppInfoParser.swift */; };
@@ -66,6 +67,7 @@
 		7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListViewController.swift; sourceTree = "<group>"; };
 		7495737F2BB46603006C3FE4 /* AppsListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListModuleBuilder.swift; sourceTree = "<group>"; };
 		749573822BB4661B006C3FE4 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		74BBBF682BD54B4B00DA1F59 /* PanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGesture.swift; sourceTree = "<group>"; };
 		74DEFDDA2BC023B000FBDB0C /* GestureLogToTestConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureLogToTestConverter.swift; sourceTree = "<group>"; };
 		74EA6A882BBC350F00A5B1DF /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
 		74EA6A8A2BBC3D1300A5B1DF /* AppInfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoParser.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				74EA6A8A2BBC3D1300A5B1DF /* AppInfoParser.swift */,
 				7411CAF12BBEBAE500CB7A8F /* SimulatorLogCollector.swift */,
 				74127BB32BCADE8F00C3AE00 /* GestureType.swift */,
+				74BBBF682BD54B4B00DA1F59 /* PanGesture.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				74183F8F2BB2E7C200CC62DB /* AppDelegate.swift in Sources */,
 				74183FA32BB2E96D00CC62DB /* MainMenuPresenter.swift in Sources */,
 				74183FB02BB2F1B700CC62DB /* MainMenuFlowCoordinator.swift in Sources */,
+				74BBBF692BD54B4B00DA1F59 /* PanGesture.swift in Sources */,
 				74EA6A8B2BBC3D1300A5B1DF /* AppInfoParser.swift in Sources */,
 				74183FA92BB2E9F000CC62DB /* SimulatorsListPresenter.swift in Sources */,
 				7495737C2BB465DD006C3FE4 /* AppsListPresenter.swift in Sources */,

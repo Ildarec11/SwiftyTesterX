@@ -14,6 +14,13 @@ enum GestureType {
         case right
     }
     
+    enum PanType {
+        case began
+        case changed
+        case ended
+    }
+    
     case tap
     case swipe(direction: SwipeDirection)
+    case pan(type: PanType)
 }
