@@ -23,4 +23,5 @@ enum GestureType {
     case tap
     case swipe(direction: SwipeDirection)
     case pan(type: PanType)
+    case request(url: String, body: String)
 }

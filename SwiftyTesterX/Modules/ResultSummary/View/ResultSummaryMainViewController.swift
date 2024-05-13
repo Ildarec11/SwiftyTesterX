@@ -1,11 +1,9 @@
-//
-//  ResultSummaryMainViewController.swift
-//  SwiftyTesterX
-//
-//  Created by Ильдар Арсламбеков on 20.04.2024.
-//
-
 import Cocoa
+
+extension NSToolbarItem.Identifier {
+    static let toggleSidebar = NSToolbarItem.Identifier("toggleSidebar")
+    static let toggleRequestView = NSToolbarItem.Identifier("toggleRequestView")
+}
 
 final class ResultSummaryMainViewController: NSSplitViewController {
 
@@ -13,6 +11,7 @@ final class ResultSummaryMainViewController: NSSplitViewController {
     
     private let resultSummaryViewController = ResultSummaryViewController()
     private let sideBarViewController = ResultSummarySideBarViewController()
+    private let requestViewController = ResultSummaryFilesViewController()
     
     private let toolbar = NSToolbar(identifier: "MainToolbar")
     
@@ -20,6 +19,7 @@ final class ResultSummaryMainViewController: NSSplitViewController {
         super.init(nibName: nil, bundle: nil)
         resultSummaryViewController.output = output
         sideBarViewController.output = output
+        requestViewController.output = output
     }
     
     required init?(coder: NSCoder) {
@@ -44,27 +44,44 @@ final class ResultSummaryMainViewController: NSSplitViewController {
         toolbar.delegate = self
         
         toolbar.displayMode = .iconOnly
-        toolbar.sizeMode = .regular
+        toolbar.delegate = self
+        toolbar.sizeMode = .default
         toolbar.insertItem(withItemIdentifier: .toggleSidebar, at: 0)
         toolbar.insertItem(withItemIdentifier: .flexibleSpace, at: 1)
+        toolbar.insertItem(withItemIdentifier: .toggleRequestView, at: 2)
 
         NSApplication.shared.windows.first?.toolbar = toolbar
         NSApplication.shared.windows.first?.toolbarStyle = .expanded
     }
     
     private func setupLayout() {
-        
-        minimumThicknessForInlineSidebars = 180
-        
+                
         let itemA = NSSplitViewItem(sidebarWithViewController: sideBarViewController)
-        itemA.minimumThickness = 80
+        itemA.minimumThickness = 100
+        itemA.maximumThickness = 300
+        itemA.isCollapsed = true
         addSplitViewItem(itemA)
         
         let itemB = NSSplitViewItem(contentListWithViewController: resultSummaryViewController)
         itemB.minimumThickness = 500
         addSplitViewItem(itemB)
+
+        let itemC = NSSplitViewItem(viewController: requestViewController)
+        itemC.minimumThickness = 400
+        itemC.isCollapsed = true
+        addSplitViewItem(itemC)
         
-        view.frame = CGRect(x: 0, y: 0, width: 800, height: 500)
+        view.frame = CGRect(x: 0, y: 0, width: 1200, height: 500)
+    }
+    
+    @objc internal override func toggleSidebar(_ sender: Any?) {
+        guard let splitViewItem = splitViewItems.first else { return }
+        splitViewItem.isCollapsed.toggle()
+    }
+
+    @objc internal func toggleRequestView(_ sender: Any?) {
+        guard let requestViewItem = splitViewItems.last else { return }
+        requestViewItem.isCollapsed.toggle()
     }
 }
 
@@ -74,37 +91,46 @@ extension ResultSummaryMainViewController: NSToolbarDelegate {
         switch itemIdentifier {
         case .toggleSidebar:
             let item = NSToolbarItem(itemIdentifier: itemIdentifier)
-            
-            
+            item.label = "Toggle Sidebar"
+            item.paletteLabel = "Toggle Sidebar"
+            item.toolTip = "Show or hide the sidebar"
+            item.target = self
+            item.action = #selector(toggleSidebar(_:))
+            item.image = NSImage(systemSymbolName: "sidebar.left", accessibilityDescription: "Toggle Sidebar")
             return item
-        case .space:
-            let flexibleSpaceItem = NSToolbarItem(itemIdentifier: NSToolbarItem.Identifier.space)
-            return flexibleSpaceItem
+        case .toggleRequestView:
+            let item = NSToolbarItem(itemIdentifier: itemIdentifier)
+            item.label = "Toggle Requests"
+            item.paletteLabel = "Toggle Requests"
+            item.toolTip = "Show or hide the request view"
+            item.target = self
+            item.action = #selector(toggleRequestView(_:))
+            item.image = NSImage(systemSymbolName: "sidebar.right", accessibilityDescription: "Toggle Requests")
+            return item
+        case .flexibleSpace:
+            return NSToolbarItem(itemIdentifier: .flexibleSpace)
         default:
             return nil
         }
     }
-    
-    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
         
-        return [.toggleSidebar]
+    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+        return [.toggleSidebar, .toggleRequestView, .flexibleSpace]
     }
     
     func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        
-        return [.toggleSidebar]
+        return [.toggleSidebar, .flexibleSpace, .toggleRequestView]
     }
     
     func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        
-        return [.toggleSidebar]
+        return []
     }
 }
 
 extension ResultSummaryMainViewController: ResultSummaryViewInput {
-
-    func askInterpolationPointsCount(closure: @escaping (Int) -> Void) {
-        resultSummaryViewController.askInterpolationPointsCount(closure: closure)
+    
+    func createRequestFile(url: String, body: String) {
+        requestViewController.createRequestFile(url: url, body: body)
     }
 
     func updateSummaryText(_ text: String) {

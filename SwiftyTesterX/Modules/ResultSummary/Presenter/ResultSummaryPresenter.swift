@@ -25,6 +25,13 @@ final class ResultSummaryPresenter {
 
 extension ResultSummaryPresenter: ResultSummaryViewOutput {
 
+    func viewDidUpdatedEnabledRequests(enabledRequests: [String : String]) {
+        logToTestConverter.updateEnabledRequests(enabledRequests)
+        let currentString = logToTestConverter.getCurrentTestString()
+        view?.updateSummaryText(currentString)
+    }
+    
+
     func viewDidToggleGestureSelect(isPanSelected: Bool) {
         logToTestConverter.isPanGesturePrefered = isPanSelected
     }
@@ -56,7 +63,8 @@ extension ResultSummaryPresenter: SimulatorLogDelegate {
 }
 
 extension ResultSummaryPresenter: GestureLogToTestConverterDelegate {
-    func askInterpolationPointsCount(closure: @escaping (Int) -> Void) {
-        view?.askInterpolationPointsCount(closure: closure)
+
+    func addNewRequestFile(url: String, body: String) {
+        view?.createRequestFile(url: url, body: body)
     }
 }

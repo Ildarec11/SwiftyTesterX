@@ -8,7 +8,7 @@
 import Foundation
 
 protocol GestureLogToTestConverterDelegate: AnyObject {
-    func askInterpolationPointsCount(closure: @escaping (Int) -> Void)
+    func addNewRequestFile(url: String, body: String)
 }
 
 final class GestureLogToTestConverter {
@@ -19,7 +19,7 @@ final class GestureLogToTestConverter {
     
     var lastPanGesture: [CGPoint] = []
 
-    private var currentLineIndex = 15
+    private var currentLineIndex = 16
     
     private var isNormalizeFunctionAdded = false
     private let normalizeFunction =
@@ -50,11 +50,12 @@ final class GestureLogToTestConverter {
     //
 
     import XCTest
+    import OHHTTPStub
 
     final class SwiftyTesterUITests: XCTestCase {
 
-
         func testExample() throws {
+    
             let app = XCUIApplication()
             app.launch()
     
@@ -62,7 +63,21 @@ final class GestureLogToTestConverter {
     }
     """
     
+    private func addStubsFuncString(requestString: String) -> String {
+        guard requestString != "" else { return "" }
+    return """
+    
+        func addStubs() {
+    \(requestString)
+        }\n
+    """
+    }
+    
     private var variableNumber = 0
+    
+    private let requestStringGenerator = RequestStubGenerator()
+    private var enabledRequests: [String: String] = [:]
+    private var requestString = ""
     
     init(delegate: GestureLogToTestConverterDelegate) {
         self.delegate = delegate
@@ -70,6 +85,48 @@ final class GestureLogToTestConverter {
     
     func getCurrentTestString() -> String {
         return currentTestString
+    }
+    
+    func updateEnabledRequests(_ enabledRequests: [String: String]) {
+        self.enabledRequests = enabledRequests
+        var resultString = ""
+        for request in enabledRequests {
+            let string = requestStringGenerator.generateStubString(url: request.key, body: request.value)
+            resultString.append(string)
+        }
+        let funcString = addStubsFuncString(requestString: resultString)
+        requestString = funcString
+
+        var stringArr = currentTestString.components(separatedBy: .newlines)
+        let index = stringArr.firstIndex(where: {
+            $0.contains("func addStubs()")
+        })
+        if let index {
+            stringArr.removeLast(stringArr.count - index + 1)
+        } else {
+            stringArr.removeLast()
+        }
+        stringArr.append(requestString)
+        
+        
+        let exampleFirstIndex = stringArr.firstIndex(where: {
+            $0.contains("testExample()")
+        })!
+        let addRequestFuncCall = stringArr[exampleFirstIndex+1]
+        if addRequestFuncCall.contains("addStubs()") {
+            if enabledRequests.isEmpty {
+                stringArr.remove(at: exampleFirstIndex+1)
+                currentLineIndex = currentLineIndex - 1
+            }
+        } else {
+            if !enabledRequests.isEmpty {
+                stringArr.insert("        addStubs()", at: exampleFirstIndex+1)
+                currentLineIndex += 1
+            }
+        }
+        
+        currentTestString = stringArr.joined(separator: "\n")
+        currentTestString.append("}")
     }
     
     func addLogValueToTest(_ value: String) {
@@ -93,8 +150,12 @@ final class GestureLogToTestConverter {
                 appendNewValueForPanGesture(info: info, type: type)
             }
         case .request(url: let url, body: let body):
-            <#code#>
+            appendNewValueForRequest(url: url, body: body)
         }
+    }
+    
+    private func appendNewValueForRequest(url: String, body: String) {
+        delegate?.addNewRequestFile(url: url, body: body)
     }
     
     private func appendNewValueForPanGesture(info: String, type: GestureType.PanType) {

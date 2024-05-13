@@ -9,16 +9,21 @@ import Cocoa
 
 protocol ResultSummaryViewInput: AnyObject {
     func updateSummaryText(_ text: String)
-    func askInterpolationPointsCount(closure: @escaping (Int) -> Void)
+    func createRequestFile(url: String, body: String)
 }
 
 protocol ResultSummaryViewOutput: AnyObject {
     func viewDidLoad()
     func viewDidToggleGestureSelect(isPanSelected: Bool)
     func copySummaryText(_ text: String)
+    func viewDidUpdatedEnabledRequests(enabledRequests: [String: String])
 }
 
 final class ResultSummaryViewController: NSViewController, ResultSummaryViewInput {
+    
+    func createRequestFile(url: String, body: String) {
+        // unused
+    }
 
     var output: ResultSummaryViewOutput?
 
@@ -45,9 +50,7 @@ final class ResultSummaryViewController: NSViewController, ResultSummaryViewInpu
         scrollView.documentView = summaryTextView
         return scrollView
     }()
-    
-    private var askInterpolationPointsCountClosure: ((Int) -> Void)?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,31 +77,8 @@ final class ResultSummaryViewController: NSViewController, ResultSummaryViewInpu
     func updateSummaryText(_ text: String) {
         summaryTextView.string = text
     }
-    
-    func askInterpolationPointsCount(closure: @escaping (Int) -> Void) {
-        askInterpolationPointsCountClosure = closure
-        showInterpolationPointsCountNotification()
-    }
-    
+        
     @objc func copyButtonClicked() {
         output?.copySummaryText(summaryTextView.string)
-    }
-    
-    private func showInterpolationPointsCountNotification() {
-        let alert = NSAlert()
-        alert.messageText = "Распознан сложный жест"
-        alert.informativeText = "Введите число точек жеста:"
-        alert.addButton(withTitle: "OK")
-        alert.addButton(withTitle: "Cancel")
-
-        let inputTextField = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 24))
-        alert.accessoryView = inputTextField
-        alert.beginSheetModal(for: self.view.window!) { [weak self] response in
-            if response == .alertFirstButtonReturn {
-                if let number = Int(inputTextField.stringValue) {
-                    self?.askInterpolationPointsCountClosure?(number)
-                }
-            }
-        }
     }
 }

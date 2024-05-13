@@ -36,9 +36,7 @@ final class SimulatorLogCollector {
             let data = file.availableData
             if data.count > 0 {
                 if let output = String(data: data, encoding: .utf8) {
-                    print("--Received log: \(output)")
                     self?.delegate?.didReceiveValue(output)
-                    // Добавьте вашу логику обработки здесь
                 }
                 file.waitForDataInBackgroundAndNotify()
             }
