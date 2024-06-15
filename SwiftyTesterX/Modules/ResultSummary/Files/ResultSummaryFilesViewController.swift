@@ -55,6 +55,7 @@ final class ResultSummaryFilesViewController: NSViewController, ResultSummaryFil
         scrollView.hasHorizontalScroller = false
 
         view.addSubview(scrollView)
+        tableView.registerForDraggedTypes([.fileURL])
     }
 
     private func setupConstraints() {

@@ -27,7 +27,7 @@ final class AppsListViewController: NSViewController, AppsListViewInput {
         progressIndicator.style = .spinning
         progressIndicator.controlSize = .regular
         progressIndicator.isIndeterminate = true
-        progressIndicator.isHidden = false // Начально скрываем лоадер
+        progressIndicator.isHidden = false
         progressIndicator.startAnimation(nil)
         return progressIndicator
     }()
@@ -44,7 +44,6 @@ final class AppsListViewController: NSViewController, AppsListViewInput {
         tableView.usesAlternatingRowBackgroundColors = true
         tableView.registerForDraggedTypes([NSPasteboard.PasteboardType(rawValue: "public.data")])
         
-        // Adding columns
         let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(rawValue: "column"))
         column.title = "Apps"
         tableView.addTableColumn(column)

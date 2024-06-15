@@ -79,14 +79,11 @@ final class MainViewController: NSViewController {
         let visualEffectView = NSVisualEffectView()
         visualEffectView.translatesAutoresizingMaskIntoConstraints = false
         
-        // Устанавливаем стиль размытия (блюра)
         visualEffectView.material = .hudWindow
         visualEffectView.blendingMode = .behindWindow
         
-        // Добавляем NSVisualEffectView на вью контроллер
         self.view.addSubview(visualEffectView)
         
-        // Устанавливаем констрейнты для NSVisualEffectView
         visualEffectView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

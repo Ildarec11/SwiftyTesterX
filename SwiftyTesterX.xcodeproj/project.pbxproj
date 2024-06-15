@@ -23,6 +23,7 @@
 		74183FBE2BB310C200CC62DB /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FBD2BB310C200CC62DB /* Device.swift */; };
 		74183FC02BB310E700CC62DB /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FBF2BB310E700CC62DB /* DeviceList.swift */; };
 		74183FC22BB3110700CC62DB /* DeviceInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */; };
+		741E2D792C026E6300A88846 /* RequestStubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E2D782C026E6300A88846 /* RequestStubGenerator.swift */; };
 		74754BC22BD3F9B70098D760 /* ResultSummaryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74754BC12BD3F9B70098D760 /* ResultSummaryMainViewController.swift */; };
 		74754BC42BD3FA010098D760 /* ResultSummarySideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74754BC32BD3FA010098D760 /* ResultSummarySideBarViewController.swift */; };
 		749573772BB45E25006C3FE4 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */; };
@@ -30,6 +31,8 @@
 		7495737E2BB465F1006C3FE4 /* AppsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */; };
 		749573802BB46603006C3FE4 /* AppsListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7495737F2BB46603006C3FE4 /* AppsListModuleBuilder.swift */; };
 		749573832BB4661B006C3FE4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749573822BB4661B006C3FE4 /* App.swift */; };
+		74A1F2D22BFFA07F0079333B /* ResultSummaryFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A1F2D12BFFA07F0079333B /* ResultSummaryFilesViewController.swift */; };
+		74A1F2D42BFFAAE70079333B /* DraggableFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A1F2D32BFFAAE70079333B /* DraggableFileView.swift */; };
 		74BBBF692BD54B4B00DA1F59 /* PanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BBBF682BD54B4B00DA1F59 /* PanGesture.swift */; };
 		74DEFDDB2BC023B000FBDB0C /* GestureLogToTestConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DEFDDA2BC023B000FBDB0C /* GestureLogToTestConverter.swift */; };
 		74EA6A892BBC350F00A5B1DF /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EA6A882BBC350F00A5B1DF /* AppTableViewCell.swift */; };
@@ -60,6 +63,7 @@
 		74183FBD2BB310C200CC62DB /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		74183FBF2BB310E700CC62DB /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		74183FC12BB3110700CC62DB /* DeviceInfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoParser.swift; sourceTree = "<group>"; };
+		741E2D782C026E6300A88846 /* RequestStubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStubGenerator.swift; sourceTree = "<group>"; };
 		74754BC12BD3F9B70098D760 /* ResultSummaryMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSummaryMainViewController.swift; sourceTree = "<group>"; };
 		74754BC32BD3FA010098D760 /* ResultSummarySideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSummarySideBarViewController.swift; sourceTree = "<group>"; };
 		749573762BB45E25006C3FE4 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		7495737D2BB465F1006C3FE4 /* AppsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListViewController.swift; sourceTree = "<group>"; };
 		7495737F2BB46603006C3FE4 /* AppsListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsListModuleBuilder.swift; sourceTree = "<group>"; };
 		749573822BB4661B006C3FE4 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		74A1F2D12BFFA07F0079333B /* ResultSummaryFilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSummaryFilesViewController.swift; sourceTree = "<group>"; };
+		74A1F2D32BFFAAE70079333B /* DraggableFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableFileView.swift; sourceTree = "<group>"; };
 		74BBBF682BD54B4B00DA1F59 /* PanGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGesture.swift; sourceTree = "<group>"; };
 		74DEFDDA2BC023B000FBDB0C /* GestureLogToTestConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureLogToTestConverter.swift; sourceTree = "<group>"; };
 		74EA6A882BBC350F00A5B1DF /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 				7411CAF12BBEBAE500CB7A8F /* SimulatorLogCollector.swift */,
 				74127BB32BCADE8F00C3AE00 /* GestureType.swift */,
 				74BBBF682BD54B4B00DA1F59 /* PanGesture.swift */,
+				741E2D782C026E6300A88846 /* RequestStubGenerator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -270,6 +277,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		74A1F2D02BFFA05C0079333B /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				74A1F2D12BFFA07F0079333B /* ResultSummaryFilesViewController.swift */,
+				74A1F2D32BFFAAE70079333B /* DraggableFileView.swift */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		74EA6A872BBC34F100A5B1DF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +297,7 @@
 		74EA6A8C2BBC54BA00A5B1DF /* ResultSummary */ = {
 			isa = PBXGroup;
 			children = (
+				74A1F2D02BFFA05C0079333B /* Files */,
 				74EA6A8E2BBC553F00A5B1DF /* Presenter */,
 				74EA6A8D2BBC553800A5B1DF /* View */,
 				74EA6A8F2BBC555100A5B1DF /* ResultSummaryModuleBuilder.swift */,
@@ -428,8 +445,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A1F2D22BFFA07F0079333B /* ResultSummaryFilesViewController.swift in Sources */,
 				74EA6A892BBC350F00A5B1DF /* AppTableViewCell.swift in Sources */,
 				74183FBE2BB310C200CC62DB /* Device.swift in Sources */,
+				741E2D792C026E6300A88846 /* RequestStubGenerator.swift in Sources */,
 				74183FB22BB2F46E00CC62DB /* MainMenuModuleBuilder.swift in Sources */,
 				74183FB82BB3057700CC62DB /* SimulatorsListModuleBuilder.swift in Sources */,
 				749573802BB46603006C3FE4 /* AppsListModuleBuilder.swift in Sources */,
@@ -448,6 +467,7 @@
 				74754BC42BD3FA010098D760 /* ResultSummarySideBarViewController.swift in Sources */,
 				74EA6A922BBC557A00A5B1DF /* ResultSummaryPresenter.swift in Sources */,
 				74183F8F2BB2E7C200CC62DB /* AppDelegate.swift in Sources */,
+				74A1F2D42BFFAAE70079333B /* DraggableFileView.swift in Sources */,
 				74183FA32BB2E96D00CC62DB /* MainMenuPresenter.swift in Sources */,
 				74183FB02BB2F1B700CC62DB /* MainMenuFlowCoordinator.swift in Sources */,
 				74BBBF692BD54B4B00DA1F59 /* PanGesture.swift in Sources */,

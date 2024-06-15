@@ -12,7 +12,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var rootFlowCoordinator: MainMenuFlowCoordinator!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
         let window = NSWindow(contentRect: NSRect(origin: .zero, size: .init(width: 2000, height: 1000)),
                               styleMask: [.titled, .closable, .resizable, .miniaturizable],
                               backing: .buffered,
@@ -23,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        // unused
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
